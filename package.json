@@ -1,0 +1,27 @@
+{
+  "name": "moncoin",
+  "version": "1.0.0",
+  "description": "Boncoin alert",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "rework-npm css/entry.css -o css/bundle.css",
+    "fontscopy": "cpx \"node_modules/bootstrap/fonts/*\" fonts && cpx \"node_modules/font-awesome/fonts/*\" fonts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Arnotjevleesch/moncoin.git"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-social": "^5.1.1",
+    "bootstrap-toggle": "^2.2.2",
+    "browserify": "^13.1.1",
+    "cpx": "^1.5.0",
+    "font-awesome": "^4.7.0",
+    "rework-npm-cli": "^0.1.1"
+  }
+}
