@@ -45,62 +45,64 @@
 	-->
 
 	
-	<div class="row">
-		<div class="col-md-5">
-			Recherche
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 table-responsive">
+				<table class="table table-bordered table-hover" id="tab_logic">
+					<thead>
+						<tr>
+							<th class="text-center">Recherche</th>
+							<th class="text-center">CRON</th>
+							<th class="text-center">Mail</th>
+							<th class="text-center">Twitter</th>
+							<th class="text-center">Slack</th>
+							<th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="line0" data-id="0">
+							<td data-name="research">
+								<div class="input-group">
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								</span>
+								<input type="text" name="research0" class="form-control" placeholder='Enter your research here' aria-label="Search query">
+								</div>
+							</td>
+							<td data-name="cron">
+								<span class="glyphicon glyphicon-time" name="cron0"></span>
+							</td>
+							<td data-name="email">
+								<span class="glyphicon glyphicon-envelope" name="email0"></span>
+							</td>
+							<td data-name="twitter">
+								<input type="checkbox" checked data-toggle="toggle" name="twitter0" data-on="on" data-off="off" >
+							</td>
+							<td data-name="slack">
+								<!--
+								<input type="checkbox" checked data-toggle="toggle" name="slack0"
+									data-on="<span class='fa fa-slack'></span>" 
+									data-off="<span class='fa fa-slack'></span>">
+									-->
+							</td>
+							<td data-name="action">
+								<span class="glyphicon glyphicon-remove-sign row-remove" name="action0"></span>
+							</td>
+						</tr>
+				</tbody>
+				</table>
+			</div>
 		</div>
-		<div class="col-md-1">
-			CRON
-		</div>
-		<div class="col-md-1">
-			Mail
-		</div>
-		<div class="col-md-1">
-			Twitter
-		</div>
-		<div class="col-md-1">
-			Slack
-		</div>
-		<div class="col-md-3">
-			Actions
-		</div>
+		<a id="add_row" class="btn btn-default pull-right glyphicon glyphicon-plus-sign"></a>
 	</div>
-    
 	
-	<div class="row">
-		<div class="col-md-5">
-				<div class="input-group">
-				  <span class="input-group-addon">
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-				  </span>
-				  <input type="text" class="form-control" aria-label="Search query">
-				</div>
-		</div>
-		<div class="col-md-1">
-			<span class="glyphicon glyphicon-time"></span>
-		</div>
-		<div class="col-md-1">
-			<span class="glyphicon glyphicon-envelope"></span>
-		</div>
-		<div class="col-md-1">
-			<input type="checkbox" checked data-toggle="toggle" 
-				data-on="<a class='btn btn-social-icon btn-twitter'><span class='fa fa-twitter'></span></a>" 
-				data-off="<a class='btn btn-social-icon btn-twitter'><span class='fa fa-twitter'></span></a>">
-		</div>
-		<div class="col-md-1">
-			<input type="checkbox" checked data-toggle="toggle" data-on="<span class='fa fa-slack'></span>" data-off="<span class='fa fa-slack'></span>">
-		</div>
-		<div class="col-md-3">
-			<span class="glyphicon glyphicon-remove-sign"></span>
-		</div>
-	</div>
+<!--
+								<input type="checkbox" checked data-toggle="toggle" name="twitter0"
+									data-on="<a class='btn btn-social-icon btn-twitter'><span class='fa fa-twitter'></span></a>" 
+									data-off="<a class='btn btn-social-icon btn-twitter'><span class='fa fa-twitter'></span></a>">
+								-->
+								
 	
-	<div class="row">
-		<div class="col-md-9"></div>
-		<div class="col-md-3">
-			<span class="glyphicon glyphicon-plus-sign" id="add_row"></span>
-		</div>
-	</div>
 	
 	<!--
 	http://getbootstrap.com/components/
