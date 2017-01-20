@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+	$("#tab_logic tbody tr:nth(0)").find("td span.row-remove").on("click", function() {
+		if($("#tab_logic").rows.length > 2){
+			$(this).closest("tr").remove();
+		}
+    });
+
     $("#add_row").click(function() {
         // Dynamic Rows Code
         
@@ -19,28 +26,28 @@ $(document).ready(function() {
         // loop through each td and create new elements with name of newid
         $.each($("#tab_logic tbody tr:nth(0) td"), function() {
             var cur_td = $(this);
-            
-				var children = cur_td.children();
-				
-				// add new td and element if it has a name
-				if ($(this).data("name") !== undefined) {
-					var td = $("<td></td>", {
-						"data-name": $(cur_td).data("name")
-					});
-					
-					var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
-					c.attr("name", $(cur_td).data("name") + newid);
-					
-					if ($(c[1]).prop('className') != "toggle-group") {
-						c.appendTo($(td));
-					}
-					
-					td.appendTo($(tr));
-				} else {
-					var td = $("<td></td>", {
-						'text': $('#tab_logic tr').length
-					}).appendTo($(tr));
-				}
+
+			if ($(this).data("name") !== undefined) {
+				var td = $("<td></td>", {
+					"data-name": $(cur_td).data("name")
+				});
+				var html = cur_td.html();
+				var new_html = html.replace($(cur_td).data("name") + "0" , $(cur_td).data("name") + newid);
+
+				if ($($(this).children()[0]).data("toggle")) {
+					new_html = "<input type='checkbox' checked data-toggle='toggle'" + 
+						" name='" + $(cur_td).data("name") + newid + "'" +
+						" data-on=\"" + $($($(this).children()[0]).children()[0]).data("on") + "\"" +
+						" data-off=\"" + $($($(this).children()[0]).children()[0]).data("off") + "\" >";
+				} 
+
+				$(new_html).appendTo($(td));
+				td.appendTo($(tr));
+			} else {
+				var td = $("<td></td>", {
+					'text': $('#tab_logic tr').length
+				}).appendTo($(tr));
+			}
         });
         
         // add the new row
@@ -49,6 +56,8 @@ $(document).ready(function() {
         $(tr).find("td span.row-remove").on("click", function() {
              $(this).closest("tr").remove();
         });
+
+		$(tr).find("[data-toggle=toggle]").bootstrapToggle();
 	});
 });
 
@@ -63,6 +72,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 </td>
+
 
 
 <td data-name="twitter">
