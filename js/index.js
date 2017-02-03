@@ -59,38 +59,11 @@ $(document).ready(function() {
 
 		$(tr).find("[data-toggle=toggle]").bootstrapToggle();
 	});
+
+	cron_example1 = new CronUI('#cron0', {
+    	initial: "42 3 * * 5",
+	});
+
+
 });
 
-/*
-<td data-name="twitter">
-	<div class="toggle btn btn-primary" data-toggle="toggle" style="width: 55px; height: 34px;">
-		<input type="checkbox" checked="" data-toggle="toggle" name="twitter0" data-on="on" data-off="off">
-		<div class="toggle-group">
-			<label class="btn btn-primary toggle-on">on</label>
-			<label class="btn btn-default active toggle-off">off</label>
-			<span class="toggle-handle btn btn-default"></span>
-		</div>
-	</div>
-</td>
-
-
-
-<td data-name="twitter">
-	<div class="toggle btn btn-primary" data-toggle="toggle" style="width: 55px; height: 34px;" name="twitter1">
-		<input type="checkbox" checked="" data-toggle="toggle" name="twitter0" data-on="on" data-off="off">
-		<div class="toggle-group">
-			<label class="btn btn-primary toggle-on">on</label>
-			<label class="btn btn-default active toggle-off">off</label>
-			<span class="toggle-handle btn btn-default"></span>
-		</div>
-	</div>
-	
-	//laisse un twitter0 au dessus + bloc ajouté en doublon:
-	
-	<div class="toggle-group" name="twitter1">
-		<label class="btn btn-primary toggle-on">on</label>
-		<label class="btn btn-default active toggle-off">off</label>
-		<span class="toggle-handle btn btn-default"></span>
-	</div>
-</td>
-*/
