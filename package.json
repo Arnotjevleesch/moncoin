@@ -5,7 +5,8 @@
   "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "rework-npm css/entry.css -o css/bundle.css",
+    "bundle-css": "rework-npm css/entry.css -o css/bundle.css",
+    "bundle-js": "browserify js/main.js -0 js/bundle.js",
     "fontscopy": "cpx \"node_modules/bootstrap/fonts/*\" fonts && cpx \"node_modules/font-awesome/fonts/*\" fonts"
   },
   "keywords": [],
@@ -23,5 +24,11 @@
     "cpx": "^1.5.0",
     "font-awesome": "^4.7.0",
     "rework-npm-cli": "^0.1.1"
+  },  
+  "browser": {
+    "bootstrap" : "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "bootstrap2-toggle" : "./node_modules/bootstrap-toggle/js/bootstrap2-toggle.min.js",
+    "tab-add-line" : "./js/tab-add-line.js"
   }
+  
 }

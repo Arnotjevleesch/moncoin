@@ -90,7 +90,7 @@ CronUI.prototype.render = function() {
 
     // Period
     el.insertAdjacentHTML('beforeend',
-        "Every <span class='cron-period'><select>"+ str_opt_period +"</select></span>");
+        "<span class='cron-period'><select>"+ str_opt_period +"</select></span>");
     var periodEl = el.querySelector('.cron-period select')
     periodEl.addEventListener("change", this.periodChanged.bind(this));
     periodEl.addEventListener("change", this.changeEvent.bind(this));
